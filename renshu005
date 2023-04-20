@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class ren002 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // ユーザーの星座を入力してもらう
+        System.out.println("あなたの星座を入力してください（例：おひつじ座）：");
+        String horoscope = scanner.nextLine();
+        
+        // 今日の占い結果を表示する
+        String fortune = getFortune();
+        System.out.println("今日の占い結果は「" + fortune + "」です。");
+    }
+    
+    private static String getFortune() {
+        // ここに星座占いのロジックを実装する
+        // 今回はランダムに占い結果を返すことにする
+        String[] fortunes = {"良いことがありそう", "今日は普通の一日", "気をつけて過ごすべき"};
+        int randomIndex = (int) (Math.random() * fortunes.length);
+        return fortunes[randomIndex];
+    }
+}
